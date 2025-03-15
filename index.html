@@ -3,103 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verification Required</title>
+    <meta name="description" content="Find the best free Minecraft hosting providers for 2025. Compare RAM, CPU, and storage for 24/7 free Minecraft servers.">
+    <title>Best Free Minecraft Hosting List - 24/7 Free Hosting (2025)</title>
     <style>
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             text-align: center;
         }
 
-        h1 {
-            color: #00A2FF;
-        }
-
-        .verify-card {
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-        }
-
-        .verify-btn, .join-btn {
-            background-color: #00A2FF;
-            border: none;
+        /* Header Styling */
+        header {
+            background-color: #222;
             color: white;
-            padding: 10px 20px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 20px 0;
+            font-size: 24px;
         }
 
-        .verify-btn:hover, .join-btn:hover {
-            background-color: #0080CC;
+        /* Hosting Cards Container */
+        .hosting-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
         }
 
-        input {
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+        /* Individual Hosting Card */
+        .hosting-card {
+            width: calc(33.33% - 20px); /* Three cards per row */
+            min-width: 280px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .hosting-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
             border-radius: 5px;
-            width: 80%;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hosting-card {
+                width: calc(50% - 20px); /* Two cards per row on tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hosting-card {
+                width: 100%; /* One card per row on mobile */
+            }
         }
     </style>
 </head>
 <body>
 
-<br><br><br>
-<h1>Paid Plugins For Free</h1>
-<p>Need Passcode To Download Paid Plugins For Free</p>
-<input type="text" id="passcode" placeholder="Enter Passcode">
-<br>
-<button class="verify-btn" onclick="verify()">Verify</button>
+    <header>
+        <h1>Best Free Minecraft Hosting Providers (2025)</h1>
+    </header>
 
-<div>
-    <br>
-    <p>You get Passcode In Discord Server</p>
-    <br>
-    <a href="https://discord.gg/YxA4aAfXKT" target="_blank">
-        <button class="join-btn">Join Discord</button>
-    </a>
-</div>
+    <section class="hosting-container">
+        <!-- Hosting Card 1 -->
+        <div class="hosting-card">
+            <h2>Hostinger</h2>
+            <p>✔ 2GB RAM | ✔ 99.9% Uptime | ✔ Free Subdomain</p>
+            <a href="#" class="btn">Visit Site</a>
+        </div>
 
-<script>
-function verify() {
-    const passcode = document.getElementById('passcode').value;
-    const validPasscodes = ["24", "25", "26"];
+        <!-- Hosting Card 2 -->
+        <div class="hosting-card">
+            <h2>Aternos</h2>
+            <p>✔ Unlimited Players | ✔ Free Mods & Plugins | ✔ DDoS Protection</p>
+            <a href="#" class="btn">Visit Site</a>
+        </div>
 
-    if (validPasscodes.includes(passcode)) {
-        alert("Passcode verified! Access granted.");
-        localStorage.setItem("verified", "true");
-        localStorage.setItem("verifyTime", Date.now().toString());
-        window.location.href = "dashboard.html";
-    } else {
-        alert("Incorrect Passcode. Please check the Passcode in our Discord server.");
-    }
-}
+        <!-- Hosting Card 3 -->
+        <div class="hosting-card">
+            <h2>Minehut</h2>
+            <p>✔ 1GB RAM | ✔ Supports 10 Players | ✔ Instant Setup</p>
+            <a href="#" class="btn">Visit Site</a>
+        </div>
 
-function checkVerification() {
-    const verified = localStorage.getItem("verified");
-    const verifyTime = localStorage.getItem("verifyTime");
+        <!-- Hosting Card 4 -->
+        <div class="hosting-card">
+            <h2>ScalaCube</h2>
+            <p>✔ 1.5GB RAM | ✔ Full FTP Access | ✔ Custom IP</p>
+            <a href="#" class="btn">Visit Site</a>
+        </div>
 
-    if (verified === "true" && verifyTime) {
-        const currentTime = Date.now();
-        const timeDifference = currentTime - parseInt(verifyTime);
+        <!-- Hosting Card 5 -->
+        <div class="hosting-card">
+            <h2>FreeMC</h2>
+            <p>✔ 512MB RAM | ✔ Auto Backups | ✔ Instant Activation</p>
+            <a href="#" class="btn">Visit Site</a>
+        </div>
 
-        // If 25 minutes have passed, clear verification
-        if (timeDifference > 25 * 60 * 1000) {
-            localStorage.removeItem("verified");
-            localStorage.removeItem("verifyTime");
-            alert("Your verification has expired. Please verify again.");
-        } else {
-            window.location.href = "dashboard.html";
-        }
-    }
-}
-
-// Automatically check verification when the page loads
-window.onload = checkVerification;
-</script>
+        <!-- Hosting Card 6 -->
+        <div class="hosting-card">
+            <h2>Server.pro</h2>
+            <p>✔ 2GB RAM | ✔ Free & Premium Plans | ✔ 24/7 Uptime</p>
+            <a href="#" class="btn">Visit Site</a>
+        </div>
+    </section>
 
 </body>
 </html>
